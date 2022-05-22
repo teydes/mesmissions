@@ -1,0 +1,17 @@
+<div class="card">
+      {% if mission.filename %}
+          <img src="{{ vich_uploader_asset(mission, 'imageFile') | imagine_filter('thumb') }}" alt="card-img-top">
+      {% else %}
+          <img src="{{ '/images/missions/mont.jpg' | imagine_filter('thumb') }}" alt="card-img-top">
+      {% endif %}
+        <div class="card-body">
+            <h5>{{ mission.name }}</h5>
+            {#<p class="card-text">{{ mission.description|u.truncate(30, '...') }}</p>#}
+            <div>
+                {% for c in mission.categories %}
+                    <em class="text-muted text-primary text-italic">#{{ c.name }}</em>
+                {% endfor %}
+            </div>
+            <a href="{{ path('mission.show', {id: mission.id, slug: mission.slug}) }}" class="btn btn-block btn-primary">Go somewhere</a>
+        </div>
+</div>

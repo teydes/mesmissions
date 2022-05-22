@@ -1,0 +1,26 @@
+{% extends 'base.html.twig'%}
+
+{% block title 'Homepage' %}
+
+
+{% block body %}
+    <div class="jumbotron text-center">
+         <h1>Mes missions</h1>
+         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam ducimus ea eaque fugit ipsa laborum laudantium maxime !</p>
+     </div>
+
+    <div class="container">
+        <h2>Missions récentes</h2>
+        <div class="row">
+            {% for mission in missions %}
+                <div class="col-md-4 col-sm-12">
+                    {% include 'pages/_mission.html.twig' %}
+                </div>
+            {% endfor %}
+        </div>
+        <div>
+            <p style="text-align: center">Footer</p>
+        </div>
+    </div>
+{% endblock %}
+

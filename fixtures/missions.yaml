@@ -1,0 +1,10 @@
+App\Entity\Mission:
+  mission_{1..100}:
+    name: <productName()>
+    description: <text(100)>
+    link: https://picsum.photos/id/<numberBetween(400,800)>/290/180
+    categories: '<numberBetween(1,5)>x @category_*'
+
+App\Entity\Category:
+  category_{1..10}:
+    name: <creature()>

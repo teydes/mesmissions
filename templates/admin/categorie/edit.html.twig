@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'Editer la mission' %}
+
+
+{% block body %}
+    <div class="container mt-4">
+        <h1>Editer la categorie</h1>
+        {{  include ('admin/categorie/_form.html.twig', {button: 'Editer'}) }}
+    </div>
+
+{% endblock %}

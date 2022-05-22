@@ -1,0 +1,25 @@
+{% extends 'base.html.twig'%}
+
+{% block title mission.name %}
+
+{% block body %}
+    <div class="jumbotron container mt-4">
+        <div class="row">
+            <div class="col-md-8">
+                {% if mission.filename %}
+                    <img src="{{ vich_uploader_asset(mission, 'imageFile') | imagine_filter('medium') }}" alt="card-img-top">
+                {% else %}
+                    <img src="{{ '/images/missions/mont.jpg' | imagine_filter('medium') }}" alt="card-img-top">
+                {% endif %}
+            </div>
+            <div class="col-md-4">
+                <h1 class=" card-header mb-3">{{ mission.name }}</h1>
+                <p> {{ mission.description | nl2br }}</p>
+                <a href="{{ mission.link }}" class="btn btn-block btn-primary mt-5" target="_blank">Go in Website</a>
+            </div>
+
+        </div>
+
+    </div>
+{% endblock %}
+
